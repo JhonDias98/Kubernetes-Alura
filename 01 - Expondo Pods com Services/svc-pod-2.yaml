@@ -1,0 +1,13 @@
+# Configurando Service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-pod-2
+spec:
+  type: ClusterIP # Faz a comunicação entre diferentes pods dentro de um mesmo cluster
+  selector:
+    app: segundo-pod # Referencia da label criada no Pod
+  ports:
+    - port: 9000 # Porta que recebe as requisições
+      targetPort: 80 # Porta que despacha as requisições

@@ -1,0 +1,14 @@
+# Configurando Pod
+
+apiVersion: v1 # Versão da API
+kind: Pod # Tipo do recurso
+metadata: # Metadados
+  name: pod-1
+  labels: # Label para ser referenciada no service
+    app: primeiro-pod 
+spec: # Especificações
+  containers:
+    - name: container-pod-1
+      image: nginx:latest
+      ports:
+        - containerPort: 80
